@@ -164,6 +164,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -298,6 +299,10 @@
     <ProjectReference Include="..\L.Test.Models\L.Test.Models.csproj">
       <Project>{1b34c77b-a94c-4d94-a235-c1a580fd46b1}</Project>
       <Name>L.Test.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\L.Test.Tools\L.Test.Tools.csproj">
+      <Project>{999fede1-04f0-4967-b7d1-62da242aec8c}</Project>
+      <Name>L.Test.Tools</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

@@ -50,11 +50,13 @@
     <Compile Include="Base\EFUnitOfWorkContext.cs" />
     <Compile Include="Base\UnitOfWorkContextBase.cs" />
     <Compile Include="CreateTable\UserCreate.cs" />
+    <Compile Include="DAL\UserRepository.cs" />
     <Compile Include="EFDbContext.cs" />
     <Compile Include="Extensions\DbContextExtensions.cs" />
     <Compile Include="IBase\IRepository.cs" />
     <Compile Include="IBase\IUnitOfWork.cs" />
     <Compile Include="IBase\IUnitOfWorkContext.cs" />
+    <Compile Include="IDAL\IUserRepository.cs" />
     <Compile Include="Initialize\DatabaseInitializer.cs" />
     <Compile Include="Migrations\201406190745487_FirstMigration.cs" />
     <Compile Include="Migrations\201406190745487_FirstMigration.Designer.cs">
