@@ -11,9 +11,9 @@ using System.Web.Mvc;
 
 namespace L.Test.API.Controllers
 {
-      public class UsersController : ApiController
+    public class UsersController : ApiController
     {
-        static readonly IUserRepository UserDAL=new UserRepository();
+        static readonly IUserRepository UserDAL = new UserRepository();
 
         /// <summary>
         /// 获取所有用户
@@ -98,7 +98,7 @@ namespace L.Test.API.Controllers
             {
                 if (user.Id == 0)
                 {
-                    int ret=UserDAL.Insert(user);
+                    int ret = UserDAL.Insert(user);
                 }
                 else
                 {
@@ -192,7 +192,7 @@ namespace L.Test.API.Controllers
             OperationResult OResult = null;
             try
             {
-                int ret=UserDAL.Delete(id);
+                int ret = UserDAL.Delete(id);
             }
             catch (Exception ee)
             {
