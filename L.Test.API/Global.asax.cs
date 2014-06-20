@@ -1,6 +1,10 @@
-﻿using L.Test.Data.Initialize;
+﻿using L.Test.Data;
+using L.Test.Data.Initialize;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Core.Mapping;
+using System.Data.Entity.Core.Metadata.Edm;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
@@ -26,6 +30,16 @@ namespace L.Test.API
 
             //数据库生成初始入口
             DatabaseInitializer.Initialize();
+
+            //关闭XML返回格式
+            GlobalConfiguration.Configuration.Formatters.XmlFormatter.SupportedMediaTypes.Clear();
+
+            //using (var dbcontext = new EFDbContext())
+            //{
+            //    var objectContext = ((IObjectContextAdapter)dbcontext).ObjectContext;
+            //    var mappingCollection = (StorageMappingItemCollection)objectContext.MetadataWorkspace.GetItemCollection(DataSpace.CSSpace);
+            //    mappingCollection.GenerateViews(new List<EdmSchemaError>());
+            //}
         }
     }
 }
