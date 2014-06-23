@@ -19,7 +19,7 @@ namespace L.Test.API.Controllers
         /// 获取所有用户
         /// </summary>
         /// <returns></returns>
-        public JsonResult GetAllCommunitys()
+        public JsonResult GetAllUsers()
         {
             Result<IQueryable<User>> result = new Result<IQueryable<User>>();
             var jsonResult = new JsonResult();
@@ -50,7 +50,7 @@ namespace L.Test.API.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public JsonResult GetCommunity(int id)
+        public JsonResult GetUser(int id)
         {
             Result<User> result = new Result<User>();
             var jsonResult = new JsonResult();
@@ -89,7 +89,7 @@ namespace L.Test.API.Controllers
         /// </summary>
         /// <param name="community"></param>
         /// <returns></returns>
-        public JsonResult PostCommunity([FromBody]User user)
+        public JsonResult PostUser([FromBody]User user)
         {
             Result<User> result = new Result<User>();
             var jsonResult = new JsonResult();
@@ -185,7 +185,7 @@ namespace L.Test.API.Controllers
         /// <param name="community"></param>
         /// <returns></returns>
         [System.Web.Http.HttpPost]
-        public JsonResult DeleteCommunity(int id)
+        public JsonResult DeleteUser(int id)
         {
             Result<string> result = new Result<string>();
             var jsonResult = new JsonResult();

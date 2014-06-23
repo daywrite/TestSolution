@@ -50,6 +50,7 @@
     <Compile Include="Base\EFUnitOfWorkContext.cs" />
     <Compile Include="Base\UnitOfWorkContextBase.cs" />
     <Compile Include="CreateTable\UserCreate.cs" />
+    <Compile Include="CreateTable\UserExtendCreate.cs" />
     <Compile Include="DAL\UserRepository.cs" />
     <Compile Include="EFDbContext.cs" />
     <Compile Include="Extensions\DbContextExtensions.cs" />
