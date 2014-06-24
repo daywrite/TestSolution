@@ -1,4 +1,6 @@
-﻿using System;
+﻿using L.Test.Data;
+using L.Test.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -9,6 +11,7 @@ namespace L.Test.API.Controllers
 {
     public class ValuesController : ApiController
     {
+        IUserExtendRepository UserExtendDAL = new UserExtendRepository();
         // GET api/values
         public IEnumerable<string> Get()
         {
@@ -22,8 +25,9 @@ namespace L.Test.API.Controllers
         }
 
         // POST api/values
-        public void Post([FromBody]string value)
+        public void Post([FromBody]UserExtend value)
         {
+            UserExtendDAL.Insert(value);
         }
 
         // PUT api/values/5
