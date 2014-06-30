@@ -37,8 +37,14 @@
       <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\工作\公司项目\手机端采集\PhoneCollect\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -61,6 +67,7 @@
     <Compile Include="IDAL\IUserExtendRepository.cs" />
     <Compile Include="IDAL\IUserRepository.cs" />
     <Compile Include="Initialize\DatabaseInitializer.cs" />
+    <Compile Include="Ioc\MefDependencySolver.cs" />
     <Compile Include="Migrations\201406190745487_FirstMigration.cs" />
     <Compile Include="Migrations\201406190745487_FirstMigration.Designer.cs">
       <DependentUpon>201406190745487_FirstMigration.cs</DependentUpon>

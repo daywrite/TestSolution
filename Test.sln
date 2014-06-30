@@ -24,6 +24,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SharedLib", "SharedLib", "{
 		SharedLib\nunit.framework.dll = SharedLib\nunit.framework.dll
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{94043B6C-4CDD-4ED8-A70F-DF90E4E565B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L.Test.Core", "L.Test.Core\L.Test.Core.csproj", "{815B4DF1-25DC-4855-9A86-254CF61A8FF6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -50,6 +54,10 @@ Global
 		{C0BFE1E2-7BF7-4F55-A45D-4D9C7C8995CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C0BFE1E2-7BF7-4F55-A45D-4D9C7C8995CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C0BFE1E2-7BF7-4F55-A45D-4D9C7C8995CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{815B4DF1-25DC-4855-9A86-254CF61A8FF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{815B4DF1-25DC-4855-9A86-254CF61A8FF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{815B4DF1-25DC-4855-9A86-254CF61A8FF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{815B4DF1-25DC-4855-9A86-254CF61A8FF6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -60,5 +68,6 @@ Global
 		{DA67E7D3-A2C6-4EA1-8E87-BC3242B72351} = {CFBC80A5-7A6E-452C-A830-92FD3F6D43D9}
 		{192CDE47-3B7F-41AE-8A3E-E0CE8DB6F0A3} = {51A786E9-2856-45F9-9994-E5E09F8572D9}
 		{C0BFE1E2-7BF7-4F55-A45D-4D9C7C8995CE} = {F8ABF66C-98DE-4D77-B398-F965DF0B9824}
+		{815B4DF1-25DC-4855-9A86-254CF61A8FF6} = {94043B6C-4CDD-4ED8-A70F-DF90E4E565B3}
 	EndGlobalSection
 EndGlobal

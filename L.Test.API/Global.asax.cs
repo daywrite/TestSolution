@@ -1,7 +1,9 @@
-﻿using L.Test.Data;
+﻿using L.Test.Core;
+//using L.Test.Data;
 using L.Test.Data.Initialize;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.Composition.Hosting;
 using System.Data.Entity.Core.Mapping;
 using System.Data.Entity.Core.Metadata.Edm;
 using System.Data.Entity.Infrastructure;
@@ -28,12 +30,19 @@ namespace L.Test.API
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
+            //设置MEF依赖注入容器
+            DirectoryCatalog catalog = new DirectoryCatalog(AppDomain.CurrentDomain.SetupInformation.PrivateBinPath);
+            MefDependencySolver solver = new MefDependencySolver(catalog);
+            DependencyResolver.SetResolver(solver);
+
             //数据库生成初始入口
             DatabaseInitializer.Initialize();
 
             //关闭XML返回格式
             GlobalConfiguration.Configuration.Formatters.XmlFormatter.SupportedMediaTypes.Clear();
 
+            //序列化与反序列化，不是特别优秀的解决循环引用的一种方式
+            GlobalConfiguration.Configuration.Formatters.JsonFormatter.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
             //using (var dbcontext = new EFDbContext())
             //{
             //    var objectContext = ((IObjectContextAdapter)dbcontext).ObjectContext;

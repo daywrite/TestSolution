@@ -48,6 +48,7 @@
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web.Entity" />
@@ -293,6 +294,10 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\L.Test.Core\L.Test.Core.csproj">
+      <Project>{815b4df1-25dc-4855-9a86-254cf61a8ff6}</Project>
+      <Name>L.Test.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\L.Test.Data\L.Test.Data.csproj">
       <Project>{da67e7d3-a2c6-4ea1-8e87-bc3242b72351}</Project>
       <Name>L.Test.Data</Name>
