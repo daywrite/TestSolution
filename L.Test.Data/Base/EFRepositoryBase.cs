@@ -113,6 +113,16 @@ namespace L.Test.Data
             return entity != null ? Delete(entity, isSave) : 0;
         }
 
+        public virtual int Delete(IEnumerable<TKey> ids, bool isSave = true)
+        {
+            IList<TEntity> entities = new List<TEntity>();
+
+            foreach (var id in ids)
+            {
+                entities.Add(EFContext.Set<TEntity, TKey>().Find(id));
+            }
+            return Delete(entities, true);
+        }
         /// <summary>
         ///     删除实体记录
         /// </summary>

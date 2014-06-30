@@ -22,12 +22,14 @@ namespace L.Test.Data
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
+            
 
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
 
             modelBuilder.Configurations.Add(new UserCreate());
             modelBuilder.Configurations.Add(new UserExtendCreate());
+
+            base.OnModelCreating(modelBuilder);
         }
     }
 }

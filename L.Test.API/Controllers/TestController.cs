@@ -40,13 +40,13 @@ namespace L.Test.API.Controllers
         /// </summary>
         /// <param name="user"></param>
         /// <returns></returns>
-        public HttpResponseMessage PostUser(User user)
-        {
-            int ret = UserDAL.Insert(user);
+        //public HttpResponseMessage PostUser(User user)
+        //{
+        //    int ret = UserDAL.Insert(user);
 
-            var response = Request.CreateResponse<User>(HttpStatusCode.Created, user);
-            return response;
-        }
+        //    var response = Request.CreateResponse<User>(HttpStatusCode.Created, user);
+        //    return response;
+        //}
 
         /// <summary>
         /// 更新用户
@@ -71,6 +71,19 @@ namespace L.Test.API.Controllers
         public HttpResponseMessage DeleteUser(int id)
         {
             UserDAL.Delete(id);
+            return new HttpResponseMessage(HttpStatusCode.NoContent);
+        }
+
+        public HttpResponseMessage PostDUser(List<int> ids)
+        {
+
+            IList<User> U = new List<User>();
+            foreach (var index in ids)
+            {
+                U.Add(Get(index));
+            }
+            UserDAL.Delete(U);
+
             return new HttpResponseMessage(HttpStatusCode.NoContent);
         }
     }

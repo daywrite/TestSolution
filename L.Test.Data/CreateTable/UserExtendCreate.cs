@@ -12,7 +12,7 @@ namespace L.Test.Data
     {
         public UserExtendCreate()
         {
-            HasRequired(p => p.User).WithMany(c => c.UserExtends).HasForeignKey(p => p.UserID);
+            HasRequired(p => p.User).WithMany(c => c.UserExtends).HasForeignKey(p => p.UserID).WillCascadeOnDelete(true);
         }
     }
 }

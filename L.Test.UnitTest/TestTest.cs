@@ -33,5 +33,16 @@ namespace L.Test.UnitTest
 
             User _user = ClientHelper.JsonRequest<User>(strUri, Method, queryCondition, objToSend, tick);
         }
+
+        public void DeleteUser()
+        {
+            IList<int> ids = new List<int>();
+            ids.Add(1);
+            ids.Add(5);
+            ids.Add(3);
+            ids.Add(4);
+
+            string SerialJM = JsonConvert.SerializeObject(ids);
+        }
     }
 }

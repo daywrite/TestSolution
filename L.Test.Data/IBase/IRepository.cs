@@ -59,6 +59,14 @@ namespace L.Test.Data
         int Delete(TKey id, bool isSave = true);
 
         /// <summary>
+        ///     删除指定编号的记录集合
+        /// </summary>
+        /// <param name="id"> 实体记录编号 </param>
+        /// <param name="isSave"> 是否执行保存 </param>
+        /// <returns> 操作影响的行数 </returns>
+        int Delete(IEnumerable<TKey> ids, bool isSave = true);
+
+        /// <summary>
         ///     删除实体记录
         /// </summary>
         /// <param name="entity"> 实体对象 </param>
