@@ -67,7 +67,6 @@
     <Compile Include="IDAL\IUserExtendRepository.cs" />
     <Compile Include="IDAL\IUserRepository.cs" />
     <Compile Include="Initialize\DatabaseInitializer.cs" />
-    <Compile Include="Ioc\MefDependencySolver.cs" />
     <Compile Include="Migrations\201406190745487_FirstMigration.cs" />
     <Compile Include="Migrations\201406190745487_FirstMigration.Designer.cs">
       <DependentUpon>201406190745487_FirstMigration.cs</DependentUpon>

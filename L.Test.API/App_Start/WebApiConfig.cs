@@ -1,7 +1,11 @@
-﻿using System;
+﻿using L.Test.Core;
+using L.Test.Data;
+using Microsoft.Practices.Unity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using System.Web.Mvc;
 
 namespace L.Test.API
 {
@@ -9,6 +13,11 @@ namespace L.Test.API
     {
         public static void Register(HttpConfiguration config)
         {
+            //依赖注入容器
+            IUnityContainer container = new UnityContainer();
+            container.RegisterType<IUserRepository, UserRepository>();
+            config.DependencyResolver = new UnityDependencyResolver(container);
+
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",

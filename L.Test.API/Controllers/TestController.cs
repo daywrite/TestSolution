@@ -16,8 +16,8 @@ namespace L.Test.API.Controllers
 {
     public class TestController : ApiController
     {
-        IUserRepository UserDAL = new UserRepository();
-
+        private readonly IUserRepository UserDAL;
+        public TestController(IUserRepository UserDAL) { this.UserDAL = UserDAL; }
         /// <summary>
         /// 通过主键ID获取用户信息
         /// </summary>

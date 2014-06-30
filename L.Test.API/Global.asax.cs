@@ -13,7 +13,7 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
-
+using Microsoft.Practices.Unity;
 namespace L.Test.API
 {
     // 注意: 有关启用 IIS6 或 IIS7 经典模式的说明，
@@ -30,10 +30,10 @@ namespace L.Test.API
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            //设置MEF依赖注入容器
-            DirectoryCatalog catalog = new DirectoryCatalog(AppDomain.CurrentDomain.SetupInformation.PrivateBinPath);
-            MefDependencySolver solver = new MefDependencySolver(catalog);
-            DependencyResolver.SetResolver(solver);
+            //设依赖注入容器
+           
+            //IUnityContainer container = GetUnityContainer();
+            //DependencyResolver.SetResolver(new UnityDependencyResolver(container));
 
             //数据库生成初始入口
             DatabaseInitializer.Initialize();
@@ -49,6 +49,15 @@ namespace L.Test.API
             //    var mappingCollection = (StorageMappingItemCollection)objectContext.MetadataWorkspace.GetItemCollection(DataSpace.CSSpace);
             //    mappingCollection.GenerateViews(new List<EdmSchemaError>());
             //}
+        }
+
+        private IUnityContainer GetUnityContainer()
+        {
+            //Create UnityContainer          
+            IUnityContainer container = new UnityContainer()
+                //.RegisterType<IControllerActivator, CustomControllerActivator>() // No nned to a controller activator
+            .RegisterType<IUserCore, IUserCore>();
+            return container;
         }
     }
 }

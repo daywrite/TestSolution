@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace L.Test.Core
 {
-    public class Class1
+    public interface IUserCore
     {
+        int Test();
     }
 }
